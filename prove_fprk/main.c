@@ -1,18 +1,12 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-int main(int argc, char *argv[])
-{
-    
-    int a=43566;
-    if(fork()==0)
-    {
-       // printf("%d\n",a);
-        a=5;
-        printf("%d\n",a);
-        exit(0);
-    }
+#include <stdio.h> 
+#include <unistd.h> 
+#include <stdlib.h> 
+#include <sys/wait.h> 
+#include <string.h> 
+#include <sys/types.h> 
+#include <sys/stat.h> 
+#include <fcntl.h> 
 
-    printf("a nel processo padre %d\n",a);
-    
+int main(void){
+    execlp("ls", "ls", "-l","20gennaio2021", NULL);
 }
